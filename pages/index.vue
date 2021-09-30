@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <div class="section1">
-      <img id="logo" src="~/assets/logo-agence-voyage.png" alt="">
+      <img id="logo" src="~/assets/logo-agence-voyage.png" alt="" />
+      <router-link to="/contact" class="contact">
+        <button>Contact</button>
+      </router-link>
       <div class="title">
         <h1>
           Voyager n'a jamais été aussi simple avec
@@ -79,8 +82,15 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head(){
+    return{
+      titleTemplate: "%s - Acceuil"
+    }
+  }
+}
 </script>
+
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@200;300;400;500&display=swap');
 a {
@@ -105,6 +115,7 @@ a {
   background-size: cover;
   display: flex;
   align-items: center;
+
   filter: invert(0%) sepia(0%) saturate(110%) hue-rotate(0deg) brightness(100%)
     contrast(120%);
 }
@@ -114,6 +125,22 @@ a {
   position: absolute;
   top: 30px;
   left: 30px;
+}
+
+.contact {
+  position: absolute;
+  top: 30px;
+  right: -70px;
+}
+
+.contact > button {
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px;
+  font-size: 25px;
+  width: 150px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 .section2 {
@@ -217,7 +244,7 @@ span {
     align-items: flex-start;
   }
   .title {
-    margin-top: 180px;
+    margin-top: 50%;
   }
 }
 
