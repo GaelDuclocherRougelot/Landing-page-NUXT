@@ -6,14 +6,13 @@
         <button>Contact</button>
       </router-link>
       <div class="title">
-        <h1>
-          Voyager n'a jamais été aussi simple avec
-          <h2>Travel&Co</h2>
-        </h1>
-        <h2>Agence de voyage</h2>
-        <a href="#section2">
-          <img id="bg-img" src="~/assets/down.svg" alt="down arrow" />
-        </a>
+        <h1>Voyager n'a jamais été aussi simple avec</h1>
+        <h2>Travel&Co</h2>
+        <h3>
+          Nos experts et agents de voyages peut vous offrir une expérience de
+          voyage inoubliable <br />
+          en tenant compte de tous vos souhaits et besoins.
+        </h3>
       </div>
     </div>
 
@@ -83,16 +82,17 @@
 
 <script>
 export default {
-  head(){
-    return{
-      titleTemplate: "%s - Acceuil"
+  head() {
+    return {
+      titleTemplate: '%s - Acceuil',
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 a {
   margin: 0;
   padding: 0;
@@ -110,7 +110,7 @@ a {
 .section1 {
   width: 100%;
   height: 100vh;
-  background-image: url('~/assets/beach.jpg');
+  background-image: url('~/assets/asia-min.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -207,21 +207,27 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
+  margin-left: 200px;
 }
 h1 {
-  color: rgb(32, 32, 32);
+  color: rgb(255, 255, 255);
   font-size: 45px;
-  width: 100%;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 200;
+  width: 80%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  letter-spacing: -1px;
 }
 h2 {
-  margin-top: 20px;
-  color: rgb(32, 32, 32);
+  margin-top: 0px;
+  color: rgb(255, 255, 255);
   width: 100%;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+}
+h3 {
+  font-family: 'Poppins', sans-serif;
+  color: white;
   font-weight: 200;
 }
 span {
