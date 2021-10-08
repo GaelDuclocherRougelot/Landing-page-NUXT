@@ -3,7 +3,7 @@
     <div class="section1">
       <img id="logo" src="~/assets/logo-agence-voyage.png" alt="" />
       <router-link to="/contact" class="contact">
-        <button>Contact</button>
+        <button>Réserver</button>
       </router-link>
       <div class="title">
         <h1>Voyager n'a jamais été aussi simple avec</h1>
