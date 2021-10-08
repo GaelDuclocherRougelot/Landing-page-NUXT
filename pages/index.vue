@@ -71,11 +71,6 @@
           </div>
         </div>
       </div>
-
-      <!-- <div id="section4">
-      <h1>Rejoindre l'aventure ?</h1>
-      <button>Voyager dès maintenant</button>
-    </div> -->
     </div>
   </div>
 </template>
