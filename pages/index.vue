@@ -1,14 +1,19 @@
 <template>
   <div class="home">
     <div class="section1">
-      <img id="logo" src="~/assets/logo-agence-voyage.png" alt="" />
-      <router-link to="/contact" class="contact">
-        <button>Réserver</button>
+      <img class="logo w-14 absolute top-8 left-6" src="~/assets/logo-agence-voyage.png" alt="" />
+      <router-link to="/contact" class="absolute top-8 right-6">
+        <button class="text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg w-full flex ease duration-75">
+          <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
+          Réserver
+        </button>
       </router-link>
-      <div class="title">
-        <h1>Voyager n'a jamais été aussi simple avec</h1>
-        <h2>Travel&Co</h2>
-        <h3>
+      <div class="title w-full flex flex-col justify-center items-center text-center">
+        <h1 class="text-white text-5xl font-normal tracking-tighter">
+          Voyager n'a jamais été aussi simple avec
+        <h2 class="text-white font-light text-4xl mt-3">Travel&Co</h2>
+        </h1>
+        <h3 class="text-white font-extralight mt-3">
           Nos experts et agents de voyages peut vous offrir une expérience de
           voyage inoubliable <br />
           en tenant compte de tous vos souhaits et besoins.
@@ -71,7 +76,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   </div>
 </template>
 
@@ -92,7 +97,6 @@ a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  margin-right: 100px;
 }
 .home {
   /* width: 100%;
@@ -110,32 +114,11 @@ a {
   background-size: cover;
   display: flex;
   align-items: center;
-
-  filter: invert(0%) sepia(0%) saturate(110%) hue-rotate(0deg) brightness(100%)
-    contrast(120%);
 }
 
-#logo {
-  width: 50px;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
-
-.contact {
-  position: absolute;
-  top: 30px;
-  right: -70px;
-}
-
-.contact > button {
-  font-family: 'Quicksand', sans-serif;
-  padding: 10px;
-  font-size: 25px;
-  width: 150px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
+.logo {
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(-20deg)
+  brightness(500%) contrast(200%);
 }
 
 .section2 {
@@ -198,38 +181,16 @@ a {
   bottom: 60px;
   cursor: pointer;
 }
-.title {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-left: 200px;
-}
-h1 {
-  color: rgb(255, 255, 255);
-  font-size: 45px;
-  width: 80%;
+
+h1,h2,h3,button {
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  letter-spacing: -1px;
 }
-h2 {
-  margin-top: 0px;
-  color: rgb(255, 255, 255);
-  width: 100%;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 40px;
+
+button:hover{
+  background-color: #db3f3f;
+  transition: all 0.3s ease;
 }
-h3 {
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  font-weight: 200;
-}
-span {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
+
 @media (max-width: 1500px) {
   #bg-img {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(-20deg)
