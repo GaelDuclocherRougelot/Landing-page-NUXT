@@ -18,6 +18,10 @@
           voyage inoubliable <br />
           en tenant compte de tous vos souhaits et besoins.
         </h3>
+        <button class="text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg flex ease duration-75 mt-40">
+          <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
+          Réserver
+        </button>
       </div>
     </div>
 
@@ -82,6 +86,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      
+    }
+  },
   head() {
     return {
       titleTemplate: '%s - Acceuil',
