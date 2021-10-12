@@ -2,23 +2,23 @@
   <div class="home">
     <div class="section1">
       <img class="logo w-14 absolute top-8 left-6" src="~/assets/logo-agence-voyage.png" alt="" />
-      <router-link to="/contact" class="absolute top-8 right-6">
+      <router-link to="/contact" class="absolute top-8 right-6 hidden lg:block">
         <button class="text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg w-full flex ease duration-75">
           <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
           Réserver
         </button>
       </router-link>
-      <div class="title w-full flex flex-col justify-center items-center text-center">
-        <h1 class="text-white text-5xl font-normal tracking-tighter">
+      <div class="title w-full flex flex-col text-center lg:justify-start lg:items-start lg:text-left lg:ml-52">
+        <h1 class="text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">
           Voyager n'a jamais été aussi simple avec
-        <h2 class="text-white font-light text-4xl mt-3">Travel&Co</h2>
+        <h2 class="text-white font-light text-4xl lg:text-6xl 2xl:text-8xl mt-3">Travel&Co</h2>
         </h1>
-        <h3 class="text-white font-extralight mt-3">
+        <h3 class="text-white font-extralight mt-3 lg-text-3x2 2xl:text-2xl">
           Nos experts et agents de voyages peut vous offrir une expérience de
           voyage inoubliable <br />
           en tenant compte de tous vos souhaits et besoins.
         </h3>
-        <button class="text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg flex ease duration-75 mt-40">
+        <button class="text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg flex ease duration-75 mt-40 lg:hidden w-40 self-center">
           <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
           Réserver
         </button>
@@ -88,7 +88,7 @@
 export default {
   data() {
     return {
-      
+      isSmall: '',
     }
   },
   head() {
@@ -204,18 +204,6 @@ button:hover{
   #bg-img {
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(-20deg)
       brightness(500%) contrast(200%);
-  }
-}
-
-@media (max-width: 770px) {
-  h2 {
-    color: white;
-  }
-  .section1 {
-    align-items: flex-start;
-  }
-  .title {
-    margin-top: 50%;
   }
 }
 
