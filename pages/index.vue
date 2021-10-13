@@ -37,29 +37,12 @@
           <div id="separator"></div>
         </div>
         <div class="bottom">
-          <div class="card">
-            <img src="~/assets/work.jpg" alt="" />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi,
-              beatae.
-            </p>
+          <div v-for="(card, index) in cards" :key="index" class="card">
+            <img :src="card.img" alt="product image" />
+            <div class="star-ratings-css" :title="card.rate"></div>
+            <p>{{card.desc}}</p>
           </div>
-          <div class="card">
-            <img src="~/assets/work.jpg" alt="" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur laboriosam possimus debitis veritatis consectetur
-              facilis!
-            </p>
-          </div>
-          <div class="card">
-            <img src="~/assets/work.jpg" alt="" />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi,
-              beatae.
-            </p>
-          </div>
-          
+
         </div>
       </div>
     </div> 
@@ -69,7 +52,26 @@
 export default {
   data() {
     return {
-
+      cards: [
+        {
+          img: '/_nuxt/assets/asia-min.jpg',
+          price: '1300€',
+          desc: 'Singapour',
+          rate: '.500'
+        },
+        {
+          img: '/_nuxt/assets/work.jpg',
+          price: '1300€',
+          desc: 'Tokyo',
+          rate: '.1000'
+        },
+        {
+          img: '/_nuxt/assets/work.jpg',
+          price: '1300€',
+          desc: 'Los angeles',
+          rate: '.875'
+        },
+      ]
     }
   },
   head() {
@@ -96,16 +98,6 @@ $secondaryFont: "Quicksand", sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  .vueperslide {
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-
-  &__title {
-    font-size: 7em;
-    opacity: 0.6;
-  }
-}
-
 
   a {
   margin: 0;
@@ -210,7 +202,6 @@ p {
 
 }
 
-
 h1,h2,h3,button {
   font-family: $primaryFont;
 }
@@ -220,10 +211,53 @@ button:hover{
   transition: all 0.3s ease;
 }
 
-/* Section 3 prices */
 
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+} 
+.star-ratings-css::before { 
+  content: '★★★★★';
+  opacity: .3;
+}
 
-
-
-
+[title=".000"]::after {
+  width: 0%;
+}
+[title=".125"]::after {
+  width: 12.5%;
+}
+[title=".250"]::after {
+  width: 25%;
+}
+[title=".375"]::after {
+  width: 37.5%;
+}
+[title=".500"]::after {
+  width: 50%;
+}
+[title=".625"]::after {
+  width: 62.5%;
+}
+[title=".750"]::after {
+  width: 75%;
+}
+[title=".875"]::after {
+  width: 87.5%;
+}
+.star-ratings-css::after {
+  color: gold;
+  content: '★★★★★';
+  position: absolute;
+  z-index: 1;
+  display: block;
+  left: 0;
+  top:0;
+  width: attr(rating);
+  overflow: hidden;
+}
 </style>
