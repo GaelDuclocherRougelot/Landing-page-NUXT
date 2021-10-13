@@ -38,8 +38,16 @@
         </div>
         <div class="bottom">
           <div v-for="(card, index) in cards" :key="index" class="card">
+            <span v-if="card.new" class="absolute text-white bg-green-500 p-2 ml-3 mt-3 rounded">Nouveau</span>
+            <span v-if="card.discount.isActive" class="absolute text-white bg-yellow-500 p-2 ml-3 mt-3 rounded">Réduction</span>
             <img :src="card.img" alt="product image" />
             <div class="star-ratings-css" :title="card.rate"></div>
+            <h1 class="text-center mt-3">{{card.name}}</h1>
+
+            <div class="flex w-full justify-center items-center">
+              <span v-if="card.discount.isActive" class="mt-1 mr-3 line-through">{{card.discount.price}}</span>
+            <h2 class="text-center mt-1 font-semibold">{{card.price}}</h2>
+            </div>
             <p>{{card.desc}}</p>
           </div>
 
@@ -56,20 +64,38 @@ export default {
         {
           img: '/_nuxt/assets/asia-min.jpg',
           price: '1300€',
-          desc: 'Singapour',
-          rate: '.500'
+          name: 'Singapour',
+          desc: 'Voyage a Singapour',
+          rate: '.875',
+          new: true,
+          discount: {
+            isActive: false,
+            price: '4500€',
+          }
         },
         {
-          img: '/_nuxt/assets/work.jpg',
-          price: '1300€',
-          desc: 'Tokyo',
-          rate: '.1000'
+          img: '/_nuxt/assets/asia-min.jpg',
+          price: '3500€',
+          name: 'Singapour',
+          desc: 'Voyage a Singapour',
+          rate: '.500',
+          new: false,
+          discount: {
+            isActive: true,
+            price: '4500€',
+          }
         },
         {
-          img: '/_nuxt/assets/work.jpg',
+          img: '/_nuxt/assets/asia-min.jpg',
           price: '1300€',
-          desc: 'Los angeles',
-          rate: '.875'
+          name: 'Singapour',
+          desc: 'Voyage a Singapour',
+          rate: '.500',
+          new: false,
+          discount: {
+            isActive: false,
+            price: '4500€',
+          }
         },
       ]
     }
@@ -129,7 +155,7 @@ $secondaryFont: "Quicksand", sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
-  /* background-color: whitesmoke; */
+  background-color: whitesmoke; 
 .top {
   display: flex;
   flex-direction: column;
@@ -141,10 +167,14 @@ $secondaryFont: "Quicksand", sans-serif;
 }
 
 p {
-  margin-top: 10px;
+  margin-top: 5px;
   font-family: $secondaryFont;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
+}
+
+span {
+  font-family: $primaryFont;
 }
 
 #separator {
@@ -164,15 +194,21 @@ p {
 
 .card {
   width: 500px;
-  height: 500px;
+  height: 700px;
   margin: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  -webkit-box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
+-moz-box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
+box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
 }
 
 .card > img {
-  padding: 10px;
+  border-radius: 15px 15px 0px 0px;
   width: 100%;
-  height: 100%;
+  height: 75%;
   object-fit: cover;
+
 }
 
 @media (max-width: 860px) {
@@ -243,8 +279,8 @@ button:hover{
 [title=".625"]::after {
   width: 62.5%;
 }
-[title=".750"]::after {
-  width: 75%;
+[title=".720"]::after {
+  width: 72%;
 }
 [title=".875"]::after {
   width: 87.5%;
