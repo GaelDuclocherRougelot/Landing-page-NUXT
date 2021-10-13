@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="section1">
+    <div class="section1 relative">
       <img class="backgrounds z-0 absolute object-cover w-full h-screen" src="~/assets/asia-min.jpg" alt="">
       <img class="logo w-14 absolute top-8 left-6" src="~/assets/logo-agence-voyage.png" alt="" />
       <router-link to="/contact" class="absolute top-8 right-6 hidden lg:block">
@@ -10,11 +10,11 @@
         </button>
       </router-link>
       <div class="title w-full flex flex-col text-center lg:justify-start lg:items-start lg:text-left lg:ml-52">
-        <h1 class="text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">
+        <h1 v-parallax="-0.2" class="text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">
           Voyager n'a jamais été aussi simple avec
         <h2 class="text-white font-light text-4xl lg:text-6xl 2xl:text-8xl mt-3">Travel&Co</h2>
         </h1>
-        <h3 class="text-white font-extralight mt-3 lg-text-3x2 2xl:text-2xl">
+        <h3 v-parallax="-0.1" class="text-white font-extralight mt-3 lg-text-3x2 2xl:text-2xl">
           Nos experts et agents de voyages peut vous offrir une expérience de
           voyage inoubliable <br />
           en tenant compte de tous vos souhaits et besoins.
@@ -26,10 +26,10 @@
       </div>
     </div>
 
-      <div id="section3">
+      <div id="section3" class="pb-24">
         <div class="top">
           <h1 class="text-3xl">Nos voyages</h1>
-          <p>
+          <p class="pl-2 pr-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
             aperiam! Commodi itaque necessitatibus autem asperiores! Minus natus
             dicta modi. Eius.
@@ -42,16 +42,20 @@
             <span v-if="card.discount.isActive" class="absolute text-white bg-yellow-500 p-2 ml-3 mt-3 rounded">Réduction</span>
             <img :src="card.img" alt="product image" />
             <div class="star-ratings-css" :title="card.rate"></div>
-            <h1 class="text-center mt-3">{{card.name}}</h1>
+            <h1 class="text-center mt-3 cursor-pointer text-lg">{{card.name}}</h1>
+            <p class="-mt-2">{{card.desc}}</p>
 
-            <div class="flex w-full justify-center items-center">
-              <span v-if="card.discount.isActive" class="mt-1 mr-3 line-through">{{card.discount.price}}</span>
+            <div class="flex w-full justify-center items-center mt-3">
+              <span v-if="card.discount.isActive" class="mt-1 mr-3 line-through text-sm">{{card.discount.price}}</span>
             <h2 class="text-center mt-1 font-semibold">{{card.price}}</h2>
             </div>
-            <p>{{card.desc}}</p>
           </div>
 
         </div>
+      </div>
+
+      <div class="section4 w-full h-screen">
+
       </div>
     </div> 
 </template>
@@ -64,8 +68,8 @@ export default {
         {
           img: '/_nuxt/assets/asia-min.jpg',
           price: '1300€',
-          name: 'Singapour',
-          desc: 'Voyage a Singapour',
+          name: 'Les jardins de la baie',
+          desc: 'Singapour',
           rate: '.875',
           new: true,
           discount: {
@@ -78,7 +82,7 @@ export default {
           price: '3500€',
           name: 'Singapour',
           desc: 'Voyage a Singapour',
-          rate: '.500',
+          rate: '.1000',
           new: false,
           discount: {
             isActive: true,
@@ -136,7 +140,7 @@ $secondaryFont: "Quicksand", sans-serif;
   height: 100vh;
   display: flex;
   align-items: center;
-
+  z-index: 1;
   .title{
     position: relative;
     z-index: 2;
@@ -149,9 +153,9 @@ $secondaryFont: "Quicksand", sans-serif;
 }
 
 #section3 {
-  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -199,8 +203,8 @@ span {
   background-color: #fff;
   border-radius: 15px;
   -webkit-box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
--moz-box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
-box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
+  -moz-box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
+  box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
 }
 
 .card > img {
@@ -215,16 +219,17 @@ box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
   .bottom {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 400px);
+    grid-template-rows: repeat(3, 750px);
     grid-auto-flow: row dense;
+    grid-row-gap: 50px;
   }
   .card {
     width: 350px;
     margin: 0 auto;
-    height: 100%;
+    height: 700px;
   }
   .card > img {
-    height: 70%;
+    height: 60%;
   }
   .top {
     width: 375px;
@@ -233,7 +238,6 @@ box-shadow: 12px 7px 12px -2px rgba(0,0,0,0.42);
     height: 100%;
   }
 }
-
 }
 
 }
