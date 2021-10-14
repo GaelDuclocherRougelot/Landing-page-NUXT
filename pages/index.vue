@@ -3,12 +3,10 @@
     <div class="section1 relative">
       <img class="backgrounds z-0 absolute object-cover w-full h-screen" src="~/assets/asia-min.jpg" alt="">
       <img class="logo w-14 absolute top-8 left-6" src="~/assets/logo-agence-voyage.png" alt="" />
-      <router-link to="/contact" class="absolute top-8 right-6 hidden lg:block">
-        <button class="text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg w-full flex ease duration-75">
+        <button class="absolute top-8 right-6 md:hidden lg:flex text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg flex ease duration-75">
           <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
           Réserver
         </button>
-      </router-link>
       <div class="title w-full flex flex-col text-center lg:justify-start lg:items-start lg:text-left lg:ml-52">
         <h1 v-parallax="-0.2" class="text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">
           Voyager n'a jamais été aussi simple avec
@@ -28,7 +26,7 @@
 
       <div id="section3" class="pb-24">
         <div class="top">
-          <h1 class="text-3xl">Nos voyages</h1>
+          <h1 class="text-3xl text-gray-700 font-extrabold">Nos voyages du moment</h1>
           <p class="pl-2 pr-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
             aperiam! Commodi itaque necessitatibus autem asperiores! Minus natus
@@ -44,7 +42,6 @@
             <div class="star-ratings-css" :title="card.rate"></div>
             <h1 class="text-center mt-3 cursor-pointer text-lg">{{card.name}}</h1>
             <p class="-mt-2">{{card.desc}}</p>
-
             <div class="flex w-full justify-center items-center mt-3">
               <span v-if="card.discount.isActive" class="mt-1 mr-3 line-through text-sm">{{card.discount.price}}</span>
             <h2 class="text-center mt-1 font-semibold">{{card.price}}</h2>
@@ -54,8 +51,18 @@
         </div>
       </div>
 
-      <div class="section4 w-full h-screen">
-
+      <div class="section4 w-full h-screen flex flex-col">
+        <div class="w-full h-3/6">
+          <h1 class="text-center mt-10 text-4xl text-gray-700 font-extrabold">Pourquoi choisir Travel&Co ?</h1>
+          <div class="w-full h-96 flex justify-around items-center">
+            <div v-for="(service, index) in services" :key="index" class="service w-96 h-80 m-5 flex flex-col items-center">
+              <img class="w-32" :src="service.img" alt="a faire">
+              <h1 class="text-center mt-10 text-2xl text-gray-700 font-extrabold">{{service.title}}</h1>
+              <p class="text-center mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque tempora, error ratione vel porro obcaecati?</p>
+            </div>
+          </div>
+        </div>
+          <div class="w-full h-3/6"></div>
       </div>
     </div> 
 </template>
@@ -101,6 +108,23 @@ export default {
             price: '4500€',
           }
         },
+      ],
+      services: [
+        {
+          img: '',
+          title: 'Tout est inclus',
+          desc: ''
+        },
+        {
+          img: '',
+          title: 'Prix avantageux',
+          desc: ''
+        },
+        {
+          img: 'serviceClient',
+          title: 'Service client de qualité',
+          desc: ''
+        }
       ]
     }
   },
@@ -216,20 +240,22 @@ span {
 }
 
 @media (max-width: 860px) {
+  .section4{
+    height: 100%;
+  }
   .bottom {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 750px);
     grid-auto-flow: row dense;
-    grid-row-gap: 50px;
   }
   .card {
     width: 350px;
     margin: 0 auto;
-    height: 700px;
+    height: 600px;
   }
   .card > img {
-    height: 60%;
+    height: 70%;
   }
   .top {
     width: 375px;
