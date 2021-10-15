@@ -17,7 +17,7 @@
           voyage inoubliable <br />
           en tenant compte de tous vos souhaits et besoins.
         </h3>
-        <button class="text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg flex ease duration-75 mt-40 lg:hidden w-40 self-center">
+        <button class="text-lg text-white bg-red-500 px-5 py-3 rounded-lg flex ease duration-75 mt-40 lg:hidden w-40 self-center">
           <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
           Réserver
         </button>
@@ -56,13 +56,13 @@
           <h1 class="text-center mt-10 text-4xl text-gray-700 font-extrabold">Pourquoi choisir Travel&Co ?</h1>
           <div class="w-full h-96 flex justify-around items-center">
             <div v-for="(service, index) in services" :key="index" class="service w-96 h-80 m-5 flex flex-col items-center">
-              <img class="w-32" :src="service.img" alt="a faire">
+              <img class="w-32 mt-8 transition-all duration-300 ease" :class="{svg : index <= 1, 'animate-spin-slow' : index == 2}" :src="require(`~/assets/${service.img}.svg`)" :alt="service.img +' photo'">
               <h1 class="text-center mt-10 text-2xl text-gray-700 font-extrabold">{{service.title}}</h1>
               <p class="text-center mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque tempora, error ratione vel porro obcaecati?</p>
             </div>
           </div>
         </div>
-          <div class="w-full h-3/6"></div>
+          <div class="w-full h-3/6 bg-gray-100"></div>
       </div>
     </div> 
 </template>
@@ -111,12 +111,12 @@ export default {
       ],
       services: [
         {
-          img: '',
+          img: 'crown',
           title: 'Tout est inclus',
           desc: ''
         },
         {
-          img: '',
+          img: 'euro',
           title: 'Prix avantageux',
           desc: ''
         },
@@ -125,7 +125,7 @@ export default {
           title: 'Service client de qualité',
           desc: ''
         }
-      ]
+      ],
     }
   },
   head() {
@@ -325,5 +325,11 @@ button:hover{
   top:0;
   width: attr(rating);
   overflow: hidden;
+}
+
+  .svg:hover{
+  transition: all 0.3s ease;
+    filter: invert(48%) sepia(50%) saturate(2476%) hue-rotate(28deg)
+  brightness(100%) contrast(200%);
 }
 </style>
