@@ -38,7 +38,7 @@
           <div v-for="(card, index) in cards" :key="index" class="section3-card">
             <span v-if="card.new" class="absolute text-white bg-green-500 p-2 ml-3 mt-3 rounded">Nouveau</span>
             <span v-if="card.discount.isActive" class="absolute text-white bg-yellow-500 p-2 ml-3 mt-3 rounded">Réduction</span>
-            <img :src="card.img" alt="product image" />
+            <img :src="require(`~/assets/jpgs/${card.img}.jpg`)" alt="product image" />
             <div class="star-ratings-css" :title="card.rate"></div>
             <h1 class="text-center mt-3 cursor-pointer text-lg">{{card.name}}</h1>
             <p class="-mt-2">{{card.desc}}</p>
@@ -77,7 +77,7 @@ export default {
     return {
       cards: [
         {
-          img: '/_nuxt/assets/asia-min.jpg',
+          img: 'asia-min',
           price: '1300€',
           name: 'Les jardins de la baie',
           desc: 'Singapour',
@@ -89,7 +89,7 @@ export default {
           }
         },
         {
-          img: '/_nuxt/assets/asia-min.jpg',
+          img: 'asia-min',
           price: '3500€',
           name: 'Singapour',
           desc: 'Voyage a Singapour',
@@ -101,7 +101,7 @@ export default {
           }
         },
         {
-          img: '/_nuxt/assets/asia-min.jpg',
+          img: 'asia-min',
           price: '1300€',
           name: 'Singapour',
           desc: 'Voyage a Singapour',
