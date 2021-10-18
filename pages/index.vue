@@ -51,22 +51,28 @@
         </div>
       </div>
 
-      <div class="section4 w-full sm:h-full lg:h-screen flex flex-col">
-        <div class="section4-top w-full lg:h-3/6 sm:h-full sm:flex-col lg:flex-row">
+      <div class="section4 w-full sm:h-full lg:h-screen flex flex-col relative">
+        <div class="section4-top w-full lg:h-3/6 sm:h-full sm:flex-col lg:flex-row z-6 bg-white relative">
           <h1 class="text-center mt-10 text-4xl text-gray-700 font-extrabold">Pourquoi choisir Travel&Co ?</h1>
 
-          <div class="w-full lg:h-96 flex justify-around items-center sm:flex-col lg:flex-row">
-            <div v-for="(service, index) in services" :key="index" class="service lg:w-96 sm:w-full h-80 m-5 flex flex-col items-center px-3">
-              <img class="w-32 mt-8 transition-all duration-300 ease" :class="{svg : index <= 1, 'animate-spin-slow' : index == 2}" :src="require(`~/assets/svgs/${service.img}.svg`)" :alt="service.img +' photo'">
+          <div class="w-full lg:h-96 flex justify-around items-center sm:flex-col lg:flex-row 2xl:mt-24">
+            <div  v-for="(service, index) in services" :key="index" class="service lg:w-96 sm:w-full h-80 m-5 flex flex-col items-center px-3 ">
+              <img class="w-32 mt-8 transition-all duration-300 ease" :class="{svg : index <= 2, 'animate-spin-slow' : index == 2}" :src="require(`~/assets/svgs/${service.img}.svg`)" :alt="service.img +' photo'">
               <h1 class="text-center mt-10 text-2xl text-gray-700 font-extrabold">{{service.title}}</h1>
               <p class="text-center mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque tempora, error ratione vel porro obcaecati?</p>
             </div>
           </div>
 
         </div>
-          <div class="section4-bottom w-full lg:h-3/6 sm:h-full bg-gray-100">
-
+          <div v-parallax="0.2" class="section4-bottom w-full lg:h-3/6 sm:h-96 bg-gray-100 flex flex-col justify-center items-center text-white">
+            <h1 class="text-4xl">Envie d'aventure ?</h1>
+            <p class="mt-2 text-xl text-center px-2">Nous avons plus de 400 voyages à vous proposer pour vivre votre aventure sans vous soucier de l'organisation !</p>
           </div>
+      </div>
+
+      <div class="section5 w-full h-screen">
+        <div class="section5-top"></div>
+        <div class="section5-bottom"></div>
       </div>
     </div> 
 </template>

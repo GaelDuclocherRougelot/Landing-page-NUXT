@@ -128,6 +128,21 @@ sans-serif;
     }
 
   }
+
+  .section4-top{
+    z-index: 6;
+  }
+  .section4-bottom {
+    background-image: url('~assets/jpgs/road-min.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;
+
+    p{
+      font-family: $secondaryFont;
+    }
+  }
 }
 
 h1,
@@ -200,7 +215,10 @@ button:hover {
   width: attr(rating);
   overflow: hidden;
 }
-
+.svg{
+    transition: all 0.3s ease;
+    filter: invert(10%) sepia(50%) saturate(100%) hue-rotate(0deg) brightness(50%) contrast(60%);
+}
 .svg:hover {
   transition: all 0.3s ease;
   filter: invert(48%) sepia(50%) saturate(2476%) hue-rotate(28deg) brightness(100%) contrast(200%);
