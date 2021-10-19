@@ -2,6 +2,12 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   render: { fallback: false },
+    gsap: {
+    extraPlugins: {
+      scrollTrigger: true
+    }
+  },
+
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -37,7 +43,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    'nuxt-gsap-module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

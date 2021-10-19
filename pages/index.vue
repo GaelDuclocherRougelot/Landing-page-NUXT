@@ -7,12 +7,12 @@
           <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
           Réserver
         </button>
-      <div class="title w-full flex flex-col text-center lg:justify-start lg:items-start lg:text-left lg:ml-52">
-        <h1 v-parallax="-0.2" class="text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">                     
+      <div class="text-anim title w-full flex flex-col text-center lg:justify-start lg:items-start lg:text-left lg:ml-52">
+        <h1 v-parallax="-0.2" class="anim text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">                     
           Voyager n'a jamais été aussi simple avec
-        <h2 class="text-white font-light text-4xl lg:text-6xl 2xl:text-8xl mt-3">Travel&Co</h2>
+        <h2 class="text-anim text-white font-light text-4xl lg:text-6xl 2xl:text-8xl mt-3">Travel&Co</h2>
         </h1>
-        <h3 v-parallax="-0.1" class="text-white font-extralight mt-3 lg-text-3x2 2xl:text-2xl">
+        <h3 v-parallax="-0.1" class="text-anim text-white font-extralight mt-3 lg-text-3x2 2xl:text-2xl">
           Nos experts et agents de voyages peut vous offrir une expérience de
           voyage inoubliable <br />
           en tenant compte de tous vos souhaits et besoins.
@@ -103,7 +103,7 @@
             <p class="text-xl"> +33 01 02 03 04 05</p>
             </div>
           </div>
-          <div class="footer w-full h-28 bg-gray-700 flex justify-between items-center">
+          <div class="footer w-full h-28 bg-gray-700 flex justify-between items-center border-t-2 border-black">
             <div class="socials flex w-80 h-16 justify-around items-center">
               <img src="~assets/svgs/facebook.svg" alt="" class="svg-social w-12 cursor-pointer">
               <img src="~assets/svgs/instagram.svg" alt="" class="svg-social w-12 cursor-pointer">
@@ -187,6 +187,7 @@ export default {
   mounted() {
     this.getRandomUsers()
     this.getYear()
+    this.textAnimations()
   },
   methods: {
     getRandomUsers(){
@@ -201,6 +202,12 @@ export default {
     getYear(){
       const date = new Date().getFullYear()
       this.date = date
+    },
+    textAnimations() {
+      const gsap = this.$gsap
+      gsap.from('.text-anim', {opacity:0,x:-20, duration: 1, ease: 'power2.inOut'})
+      gsap.to('.text-anim', {opacity:1, duration: 1, stagger: 0.1})
+
     }
   },
   
