@@ -27,7 +27,7 @@
       <div id="section3" class="lg:pb-24 sm:pb-6">
         <div class="section3-top">
           <h1 class="text-3xl text-gray-700 font-extrabold">Nos voyages du moment</h1>
-          <p class="pl-2 pr-2">
+          <p class="px-2">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
             aperiam! Commodi itaque necessitatibus autem asperiores! Minus natus
             dicta modi. Eius.
@@ -55,7 +55,7 @@
         <div class="section4-top w-full lg:h-3/6 sm:h-full sm:flex-col lg:flex-row z-6 bg-white relative">
           <h1 class="text-center mt-10 text-4xl text-gray-700 font-extrabold">Pourquoi choisir Travel&Co ?</h1>
 
-          <div class="w-full lg:h-96 flex justify-around items-center sm:flex-col lg:flex-row 2xl:mt-24">
+          <div class="w-full lg:h-96 flex justify-around items-center sm:flex-col lg:flex-row 2xl:mt-12">
             <div  v-for="(service, index) in services" :key="index" class="service lg:w-96 sm:w-full h-80 m-5 flex flex-col items-center px-3 ">
               <img class="w-32 mt-8 transition-all duration-300 ease" :class="{svg : index <= 2, 'animate-spin-slow' : index == 2}" :src="require(`~/assets/svgs/${service.img}.svg`)" :alt="service.img +' photo'">
               <h1 class="text-center mt-10 text-2xl text-gray-700 font-extrabold">{{service.title}}</h1>
@@ -64,15 +64,35 @@
           </div>
 
         </div>
-          <div v-parallax="0.2" class="section4-bottom w-full lg:h-3/6 sm:h-96 bg-gray-100 flex flex-col justify-center items-center text-white">
-            <h1 class="text-4xl">Envie d'aventure ?</h1>
-            <p class="mt-2 text-xl text-center px-2">Nous avons plus de 400 voyages à vous proposer pour vivre votre aventure sans vous soucier de l'organisation !</p>
+          <div class="section4-bottom w-full lg:h-4/6 sm:h-96 bg-gray-100 flex flex-col justify-center items-center text-white lg:bg-cover">
+            <h1 class="text-4xl 2xl:text-5xl">Envie d'aventure ?</h1>
+            <p class="mt-2 text-xl text-center px-2 2xl:text-2xl">Nous avons plus de 400 voyages à vous proposer pour vivre votre aventure sans vous soucier de l'organisation !</p>
+            <button class="sm:hidden lg:flex text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 mt-6 rounded-lg flex ease duration-75">
+            <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
+            Partir à l'aventure
+            </button>
           </div>
       </div>
 
-      <div class="section5 w-full h-screen">
-        <div class="section5-top"></div>
-        <div class="section5-bottom"></div>
+      <div  class="section5 w-full lg:h-full z-10 bg-white flex flex-col items-center sm:h-full">
+        <div class="section5-top w-full lg:h-3/6 sm:h-full flex flex-col items-center justify-around">
+          <h1 class="text-center mt-10 text-4xl text-gray-700 font-extrabold px-3">Les avis de nos clients</h1>
+
+          <div class="reviews flex sm:flex-col lg:flex-row sm:h-full justify-center items-center pb-10">
+            <div v-for="(user, index) in users" :key="index" class="review px-16 sm:mt-20 sm:flex sm:flex-col sm:items-center sm:text-center lg:pb-16">
+              <img :src="user.picture.large" alt="person" class="rounded-xl">
+              <div class="flex">
+                <h1 class="mt-2">{{user.name.first}},</h1>
+                <span class="text-gray-700 mt-2 ml-2">{{user.location.country}}</span>
+              </div>
+              <p class="mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita enim ab pariatur exercitationem est officiis natus adipisci excepturi quia iusto !</p>
+            </div>
+          </div>
+        </div>
+        <div class="section5-bottom h-full w-full bg-gray-100 flex flex-col">
+          <div class="w-full h-96 bg-gray-200"></div>
+          <div class="footer w-full h-36 bg-gray-700 flex"></div>
+        </div>
       </div>
     </div> 
 </template>
@@ -136,6 +156,7 @@ export default {
           desc: ''
         }
       ],
+      users: [],
     }
   },
   head() {
@@ -143,9 +164,21 @@ export default {
       titleTemplate: '%s - Acceuil',
     }
   },
-  methods: {
-    
+  mounted() {
+    this.getRandomUsers()
   },
+  methods: {
+    getRandomUsers(){
+      fetch('https://randomuser.me/api/?results=3')
+      .then(response => response.json())
+      .then(data => {
+        data.results.forEach(users => {
+          this.users.push(users)
+        });
+      })
+    }
+  },
+  
 }
 </script>
 

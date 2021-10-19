@@ -131,15 +131,25 @@ sans-serif;
 
   .section4-top{
     z-index: 6;
+    p{
+      font-family: $secondaryFont;
+    }
   }
   .section4-bottom {
     background-image: url('~assets/jpgs/road-min.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     z-index: 5;
 
     p{
+      font-family: $secondaryFont;
+    }
+  }
+  .section5-top {
+    h1{
+      font-family: $primaryFont;
+    }
+    p {
       font-family: $secondaryFont;
     }
   }
