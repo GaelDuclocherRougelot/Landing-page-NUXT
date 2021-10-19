@@ -145,7 +145,8 @@ sans-serif;
       font-family: $secondaryFont;
     }
   }
-  .section5-top {
+  .section5-top,
+  .section5-bottom {
     h1{
       font-family: $primaryFont;
     }
@@ -232,4 +233,14 @@ button:hover {
 .svg:hover {
   transition: all 0.3s ease;
   filter: invert(48%) sepia(50%) saturate(2476%) hue-rotate(28deg) brightness(100%) contrast(200%);
+}
+
+.svg-social {
+  filter: invert(0%) sepia(0%) saturate(1000%) hue-rotate(30deg) brightness(10%) contrast(100%);
+  transition: all 0.3s ease;
+}
+
+.svg-social:hover {
+  filter: invert(10%) sepia(0%) saturate(1000%) hue-rotate(0deg) brightness(1000%) contrast(100%);
+  transform: scale(1.2);
 }

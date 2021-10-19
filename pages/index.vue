@@ -44,7 +44,7 @@
             <p class="-mt-2">{{card.desc}}</p>
             <div class="flex w-full justify-center items-center mt-3">
               <span v-if="card.discount.isActive" class="mt-1 mr-3 line-through text-sm">{{card.discount.price}}</span>
-            <h2 class="text-center mt-1 font-semibold">{{card.price}}</h2>
+              <h2 class="text-center mt-1 font-semibold">{{card.price}}</h2>
             </div>
           </div>
 
@@ -80,7 +80,7 @@
 
           <div class="reviews flex sm:flex-col lg:flex-row sm:h-full justify-center items-center pb-10">
             <div v-for="(user, index) in users" :key="index" class="review px-16 sm:mt-20 sm:flex sm:flex-col sm:items-center sm:text-center lg:pb-16">
-              <img :src="user.picture.large" alt="person" class="rounded-xl">
+              <img :src="user.picture.large" alt="person" class="rounded-full">
               <div class="flex">
                 <h1 class="mt-2">{{user.name.first}},</h1>
                 <span class="text-gray-700 mt-2 ml-2">{{user.location.country}}</span>
@@ -89,9 +89,28 @@
             </div>
           </div>
         </div>
-        <div class="section5-bottom h-full w-full bg-gray-100 flex flex-col">
-          <div class="w-full h-96 bg-gray-200"></div>
-          <div class="footer w-full h-36 bg-gray-700 flex"></div>
+        <div class="section5-bottom h-full w-full bg-gray-100 flex flex-col justify-center items-center">
+          <div class="w-full h-96 bg-gray-200 flex flex-col items-center justify-center">
+            <h1 class="text-center text-4xl text-gray-700 font-extrabold px-3">Contactez-nous !</h1>
+
+            <div class="flex flex-col h-30 justify-center items-center mt-10">
+            <img src="~assets/svgs/mail.svg" alt="" class="w-10 svg">
+            <p class="text-xl"> travel&co@agence.com</p>
+            </div>
+
+            <div class="flex flex-col h-30 justify-center items-center mt-10">
+            <img src="~assets/svgs/phone.svg" alt="" class="w-10 svg">
+            <p class="text-xl"> +33 01 02 03 04 05</p>
+            </div>
+          </div>
+          <div class="footer w-full h-28 bg-gray-700 flex justify-between items-center">
+            <div class="socials flex w-80 h-16 justify-around items-center">
+              <img src="~assets/svgs/facebook.svg" alt="" class="svg-social w-12 cursor-pointer">
+              <img src="~assets/svgs/instagram.svg" alt="" class="svg-social w-12 cursor-pointer">
+              <img src="~assets/svgs/twitter.svg" alt="" class="svg-social w-12 cursor-pointer">
+            </div>
+            <p class="mr-6 text-white">&copy; {{date}} travel&co</p>
+          </div>
         </div>
       </div>
     </div> 
@@ -157,6 +176,7 @@ export default {
         }
       ],
       users: [],
+      date: ''
     }
   },
   head() {
@@ -166,6 +186,7 @@ export default {
   },
   mounted() {
     this.getRandomUsers()
+    this.getYear()
   },
   methods: {
     getRandomUsers(){
@@ -176,6 +197,10 @@ export default {
           this.users.push(users)
         });
       })
+    },
+    getYear(){
+      const date = new Date().getFullYear()
+      this.date = date
     }
   },
   
