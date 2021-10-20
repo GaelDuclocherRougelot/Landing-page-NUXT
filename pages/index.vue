@@ -3,12 +3,12 @@
     <div class="section1 relative">
       <img class="backgrounds z-0 absolute object-cover w-full h-screen" src="~/assets/jpgs/asia-min.jpg" alt="background">
       <img class="logo w-14 absolute top-8 left-6" src="~/assets/pngs/logo-agence-voyage.png" alt="logo" />
-        <button class="absolute top-8 right-6 sm:hidden lg:flex text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg flex ease duration-75">
+        <button class="btn-anim absolute top-8 right-6 sm:hidden lg:flex text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg flex ease duration-75">
           <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
           Réserver
         </button>
       <div class="text-anim title w-full flex flex-col text-center lg:justify-start lg:items-start lg:text-left lg:ml-52">
-        <h1 v-parallax="-0.2" class="anim text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">                     
+        <h1 v-parallax="-0.2" class="text-anim text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">                     
           Voyager n'a jamais été aussi simple avec
         <h2 class="text-anim text-white font-light text-4xl lg:text-6xl 2xl:text-8xl mt-3">Travel&Co</h2>
         </h1>
@@ -17,7 +17,7 @@
           voyage inoubliable <br />
           en tenant compte de tous vos souhaits et besoins.
         </h3>
-        <button class="text-lg text-white bg-red-500 px-5 py-3 rounded-lg flex ease duration-75 mt-40 lg:hidden w-40 self-center">
+        <button class="btn-anim text-lg text-white bg-red-500 px-5 py-3 rounded-lg flex ease duration-75 mt-40 lg:hidden w-40 self-center">
           <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
           Réserver
         </button>
@@ -122,10 +122,10 @@ export default {
     return {
       cards: [
         {
-          img: 'asia-min',
-          price: '1300€',
-          name: 'Les jardins de la baie',
-          desc: 'Singapour',
+          img: 'costa-rica',
+          price: '1999€',
+          name: 'Costa Rica',
+          desc: 'Voyage au Costa Rica',
           rate: '.875',
           new: true,
           discount: {
@@ -134,23 +134,23 @@ export default {
           }
         },
         {
-          img: 'asia-min',
-          price: '3500€',
-          name: 'Singapour',
-          desc: 'Voyage a Singapour',
+          img: 'maldive',
+          price: '1800€',
+          name: 'Maldives',
+          desc: 'Voyage aux Maldives',
           rate: '.1000',
           new: false,
           discount: {
             isActive: true,
-            price: '4500€',
+            price: '2500€',
           }
         },
         {
-          img: 'asia-min',
+          img: 'japon',
           price: '1300€',
-          name: 'Singapour',
-          desc: 'Voyage a Singapour',
-          rate: '.500',
+          name: 'Japon',
+          desc: 'Voyage au Japon',
+          rate: '.875',
           new: false,
           discount: {
             isActive: false,
@@ -187,7 +187,7 @@ export default {
   mounted() {
     this.getRandomUsers()
     this.getYear()
-    this.textAnimations()
+    this.animations()
   },
   methods: {
     getRandomUsers(){
@@ -203,10 +203,16 @@ export default {
       const date = new Date().getFullYear()
       this.date = date
     },
-    textAnimations() {
+    animations() {
       const gsap = this.$gsap
-      gsap.from('.text-anim', {opacity:0,x:-20, duration: 1, ease: 'power2.inOut'})
-      gsap.to('.text-anim', {opacity:1, duration: 1, stagger: 0.1})
+      gsap.from('.logo', {opacity:0,x:-20, duration:1,delay: 1})
+      gsap.to('.logo', {opacity:1, duration:1, delay: 1})
+
+      gsap.from('.btn-anim', {opacity:0,x:20, duration:1,delay: 1.5})
+      gsap.to('.btn-anim', {opacity:1, duration:1, delay: 1.5})
+
+      gsap.from('.text-anim', {opacity:0,x:-20, duration: 1, ease: 'power2.inOut',delay: 2})
+      gsap.to('.text-anim', {opacity:1, duration: 1, stagger: 0.1,delay: 2})
 
     }
   },
