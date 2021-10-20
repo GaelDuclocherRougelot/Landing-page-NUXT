@@ -8,16 +8,16 @@
           Réserver
         </button>
       <div class="text-anim title w-full flex flex-col text-center lg:justify-start lg:items-start lg:text-left lg:ml-52">
-        <h1 v-parallax="-0.2" class="text-anim text-white text-5xl lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">                     
+        <h1 v-parallax="-0.2" class="text-anim text-white text-5xl sm:mt-10 lg:text-5xl 2xl:text-6xl font-normal tracking-tighter leading-snug">                     
           Voyager n'a jamais été aussi simple avec
         <h2 class="text-anim text-white font-light text-4xl lg:text-6xl 2xl:text-8xl mt-3">Travel&Co</h2>
         </h1>
         <h3 v-parallax="-0.1" class="text-anim text-white font-extralight mt-3 lg-text-3x2 2xl:text-2xl">
-          Nos experts et agents de voyages peut vous offrir une expérience de
+          Nos experts et agents de voyages vous offrirons une expérience de
           voyage inoubliable <br />
           en tenant compte de tous vos souhaits et besoins.
         </h3>
-        <button class="btn-anim text-lg text-white bg-red-500 px-5 py-3 rounded-lg flex ease duration-75 mt-40 lg:hidden w-40 self-center">
+        <button v-parallax="-0.1" class="btn-anim text-lg text-white bg-red-500 px-5 py-3 rounded-lg flex ease duration-75 mt-10 lg:hidden w-40 self-center">
           <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
           Réserver
         </button>
@@ -57,7 +57,7 @@
 
           <div class="w-full lg:h-96 flex justify-around items-center sm:flex-col lg:flex-row 2xl:mt-12">
             <div  v-for="(service, index) in services" :key="index" class="service lg:w-96 sm:w-full h-80 m-5 flex flex-col items-center px-3 ">
-              <img class="w-32 mt-8 transition-all duration-300 ease" :class="{svg : index <= 2, 'animate-spin-slow' : index == 2}" :src="require(`~/assets/svgs/${service.img}.svg`)" :alt="service.img +' photo'">
+              <img class="svg w-32 mt-8 transition-all duration-300 ease" :src="require(`~/assets/svgs/${service.img}.svg`)" :alt="service.img +' photo'">
               <h1 class="text-center mt-10 text-2xl text-gray-700 font-extrabold">{{service.title}}</h1>
               <p class="text-center mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque tempora, error ratione vel porro obcaecati?</p>
             </div>
@@ -67,7 +67,7 @@
           <div class="section4-bottom w-full lg:h-4/6 sm:h-96 bg-gray-100 flex flex-col justify-center items-center text-white lg:bg-cover">
             <h1 class="text-4xl 2xl:text-5xl">Envie d'aventure ?</h1>
             <p class="mt-2 text-xl text-center px-2 2xl:text-2xl">Nous avons plus de 400 voyages à vous proposer pour vivre votre aventure sans vous soucier de l'organisation !</p>
-            <button class="sm:hidden lg:flex text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 mt-6 rounded-lg flex ease duration-75">
+            <button class="lg:flex text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 mt-6 rounded-lg flex ease duration-75">
             <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
             Partir à l'aventure
             </button>
@@ -95,7 +95,7 @@
 
             <div class="flex flex-col h-30 justify-center items-center mt-10">
             <img src="~assets/svgs/mail.svg" alt="" class="w-10 svg">
-            <p class="text-xl"> travel&co@agence.com</p>
+            <p class="text-xl">travel&co@agence.com</p>
             </div>
 
             <div class="flex flex-col h-30 justify-center items-center mt-10">

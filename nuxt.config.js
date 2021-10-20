@@ -7,7 +7,35 @@ export default {
       scrollTrigger: true
     }
   },
+  pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    css: false,
 
+    beforeEnter(el) {
+      this.$gsap.set(el, {
+        opacity: 0,
+      })
+    },
+
+    enter(el, done) {
+      this.$gsap.to(el, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.inOut',
+        onComplete: done
+      })
+    },
+
+    leave(el, done) {
+      this.$gsap.to(el, {
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.inOut',
+        onComplete: done
+      })
+    }
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
