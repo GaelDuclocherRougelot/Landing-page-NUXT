@@ -50,7 +50,9 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/icon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/icon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@200;300;400;500&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap' }
     ]
   },
 
@@ -72,7 +74,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
-    'nuxt-gsap-module'
+    'nuxt-gsap-module',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

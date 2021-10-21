@@ -4,7 +4,7 @@
       <img class="backgrounds z-0 absolute object-cover w-full h-screen" src="~/assets/jpgs/asia-min.jpg" alt="background">
       <img class="logo w-14 absolute top-8 left-6" src="~/assets/pngs/logo-agence-voyage.png" alt="logo" />
         <button class="btn-anim absolute top-8 right-6 sm:hidden lg:flex text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 rounded-lg flex ease duration-75">
-          <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
+          <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png" alt="button img"/>
           Réserver
         </button>
       <div class="text-anim title w-full flex flex-col text-center lg:justify-start lg:items-start lg:text-left lg:ml-52">
@@ -18,7 +18,7 @@
           en tenant compte de tous vos souhaits et besoins.
         </h3>
         <button v-parallax="-0.1" class="btn-anim text-lg text-white bg-red-500 px-5 py-3 rounded-lg flex ease duration-75 mt-10 lg:hidden w-40 self-center">
-          <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
+          <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png" alt="button img"/>
           Réserver
         </button>
       </div>
@@ -68,7 +68,7 @@
             <h1 class="text-4xl 2xl:text-5xl">Envie d'aventure ?</h1>
             <p class="mt-2 text-xl text-center px-2 2xl:text-2xl">Nous avons plus de 400 voyages à vous proposer pour vivre votre aventure sans vous soucier de l'organisation !</p>
             <button class="lg:flex text-lg text-white bg-red-500 pl-5 pr-5 pt-3 pb-3 mt-6 rounded-lg flex ease duration-75">
-            <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png"/>
+            <img class="mr-1" src="https://img.icons8.com/external-prettycons-flat-prettycons/30/000000/external-send-social-media-prettycons-flat-prettycons.png" alt="button img"/>
             Partir à l'aventure
             </button>
           </div>
@@ -94,12 +94,12 @@
             <h1 class="text-center text-4xl text-gray-700 font-extrabold px-3">Contactez-nous !</h1>
 
             <div class="flex flex-col h-30 justify-center items-center mt-10">
-            <img src="~assets/svgs/mail.svg" alt="" class="w-10 svg">
+            <img src="~assets/svgs/mail.svg" alt="email logo" class="w-10 svg">
             <p class="text-xl">travel&co@agence.com</p>
             </div>
 
             <div class="flex flex-col h-30 justify-center items-center mt-10">
-            <img src="~assets/svgs/phone.svg" alt="" class="w-10 svg">
+            <img src="~assets/svgs/phone.svg" alt="phone logo" class="w-10 svg">
             <p class="text-xl"> +33 01 02 03 04 05</p>
             </div>
           </div>
